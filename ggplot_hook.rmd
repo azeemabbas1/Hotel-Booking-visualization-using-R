@@ -1,0 +1,59 @@
+---
+title: "ggplot_hook"
+author: "Azeem"
+date: "2023-05-04"
+output: html_document
+---
+```{r}
+install.packages('ggplot2')
+library(ggplot2) 
+
+install.packages("tidyverse")
+library(tidyverse)
+library(lubridate)
+```
+```{r ggplot for penguin data}
+
+library(ggplot2)
+
+library(palmerpenguins)
+
+data(penguins)
+
+View(penguins)
+
+```
+```{r}
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, fill=market_segment))
+
+
+ggplot(data = hotel_bookings)+
+  geom_bar(mapping = aes(x= distribution_channel, fill= deposit_type))
+
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, )) +
+  facet_wrap(~deposit_type)
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, )) +
+  facet_wrap(~market_segment)
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, )) +
+  facet_grid(~deposit_type)
+
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, )) +
+  facet_grid(~deposit_type~market_segment)
+
+#conclusion 
+ggplot(data = hotel_bookings) +
+  geom_bar(mapping = aes(x = distribution_channel, )) +
+  facet_wrap(~deposit_type~market_segment)
+
+
+```
+
+
